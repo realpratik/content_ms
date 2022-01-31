@@ -1,11 +1,18 @@
 
 <!-- header -->  
 <?php include "includes/admin_header.php" ?>
-
-
+ 
+<!--delete query-->
+<?php                            
+    if(isset($_GET['delete'])){
+      $the_cat_id = $_GET['delete'];
+      $query = "DELETE FROM categories WHERE cat_id = {$the_cat_id}";
+      $delete_query = mysqli_query($connection,$query);
+      // header("location: categories.php");
+    }
+?>
 
 <div id="wrapper">
-
 <!-- Navigation -->
 <?php include "includes/admin_navigation.php" ?>
 
@@ -22,111 +29,75 @@
 
                     <div class="col-xs-6">
 
-
-<?php
-
-if(isset($_POST['submit'])){
-  $cat_title = $_POST['cat_title'];
-
-  if($cat_title == "" || empty($cat_title)){
-
-    echo "This field should not be empty";
-
-  } else {
-
-    $query = "INSERT INTO categories(cat_title) VALUES ('$cat_title')";
-
-    $query = mysqli_query($connection,$query);
-
-      if(!$query){
-        die('QUERY FAILED' . mysqli_error($connection));
-        }
-  }
-
-}
-
-?>
-
+                      <!-- function from functions.php -->
+                      <?php  insert_categories();  ?>
 
                       <form action ="" method="post">
                         <div class="form-group">
                           <label class="cat-title"> Add Category</label>
                           <input type="text" name="cat_title" class="form-control">
                         </div>
-                        <form action ="">
+                      
                         <div class="form-group">
                           <input type="submit" name="submit" value="Add Category" class="btn btn-primary">
                         </div>
-                      </form>
+                      </form>  
 
 
-                      <form action ="" method="post">
-                        <div class="form-group">
-                          <label class="cat-title"> Add Category</label>
-                          <input type="text" name="cat_title" class="form-control">
-                        </div>
-                        <form action ="">
-                        <div class="form-group">
-                          <input type="submit" name="submit" value="Add Category" class="btn btn-primary">
-                        </div>
-                      </form>
-                    </div>
 
-                    <div class="col-xs-6">
+                    <?php
+                       if(isset($_GET['edit'])){
 
-<?php
-//$connection = mysqli_connect("localhost","root","root","cms"); if db is not included
-    $query = "SELECT * FROM categories";
-    $select_categories = mysqli_query($connection,$query);
-?>
+                        $cat_id = $_GET['edit'];
+
+                        include "includes/update_categories.php";
 
 
-                      <table class="table table-bordered table-hover">
-                          <thead>
-                            <tr>
-                              <th>Id</th>
-                              <th>Category Title</th>
-                            </tr>
-                          </thead>
-                          <tbody>
+                       }   
+
+
+                    ?>
+
+
                             
-                                                   
-<?php
-while($row = mysqli_fetch_assoc($select_categories)){
-$cat_id = $row['cat_id'];
-$cat_title = $row['cat_title'];
+                  </div>
 
-echo "<tr>";
-echo "<td>{$cat_id}</td>";
-echo "<td>{$cat_title}</td>";
-echo "<tr>";
-  }
-?>
-                           
-                          </tbody>
-                      </table>
-                    </div>
-                    
-                    <!-- <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-file"></i> sddfdfdasfad
-                        </li>
-                    </ol> -->
+                  <div class="col-xs-6">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Category Title</th>
+                          </tr>
+                        </thead>
+                        <tbody>                                             
+                            <?php
+                            // FIND ALL CATEGORIES
+                            $query = "SELECT * FROM categories";
+                            $select_categories = mysqli_query($connection,$query);
+                        
+                            while($row = mysqli_fetch_assoc($select_categories)){
+                            $cat_id = $row['cat_id'];
+                            $cat_title = $row['cat_title'];
 
-
+                            echo "<tr>";
+                            echo "<td>{$cat_id}</td>";
+                            echo "<td>{$cat_title}</td>";
+                            echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
+                            echo "<td><a href='categories.php?edit={$cat_id}'>Edit</a></td>";
+                            echo "<tr>";
+                              }
+                            ?>   
+                        </tbody>
+                    </table>
+                  </div>               
                 </div>
             </div>
             <!-- /.row div -->
-
         </div>
         <!-- /.container-fluid div -->
-
     </div>
 <!-- /#page-wrapper div -->
 
-
 <!--footer-->
-<?php include "includes/admin_footer.php" ?>   
+<?php include "includes/admin_footer.php" ?>

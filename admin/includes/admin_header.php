@@ -1,23 +1,9 @@
-<!-- <?php ob_start(); ?>
 
 <?php include "../includes/db.php"  ?>
+<?php include "functions.php"  ?>
 
+<?php ob_start(); ?>
 
-<?php session_start(); ?>
-
-<?php
-
-    if(isset($SESSION['user_role'])){
-
-
-    } else {
-
-        header("location: ../admin/admin_index.php");
-    }
-
-
-
-?> -->
 
 
 <!DOCTYPE html>
@@ -30,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>blognepal.com</title>
+    <title>Create a content</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

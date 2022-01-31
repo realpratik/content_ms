@@ -1,0 +1,4 @@
+git branch -m main Trunk
+git fetch origin
+git branch -u origin/Trunk Trunk
+git remote set-head origin -a
