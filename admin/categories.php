@@ -3,14 +3,7 @@
 <?php include "includes/admin_header.php" ?>
  
 <!--delete query-->
-<?php                            
-    if(isset($_GET['delete'])){
-      $the_cat_id = $_GET['delete'];
-      $query = "DELETE FROM categories WHERE cat_id = {$the_cat_id}";
-      $delete_query = mysqli_query($connection,$query);
-      // header("location: categories.php");
-    }
-?>
+<?php delete_categories()  ?>
 
 <div id="wrapper">
 <!-- Navigation -->
@@ -43,23 +36,14 @@
                         </div>
                       </form>  
 
-
-
+                      <!-- Update and edit categories -->
                     <?php
                        if(isset($_GET['edit'])){
-
                         $cat_id = $_GET['edit'];
-
                         include "includes/update_categories.php";
-
-
                        }   
-
-
                     ?>
 
-
-                            
                   </div>
 
                   <div class="col-xs-6">
@@ -70,24 +54,11 @@
                             <th>Category Title</th>
                           </tr>
                         </thead>
-                        <tbody>                                             
-                            <?php
-                            // FIND ALL CATEGORIES
-                            $query = "SELECT * FROM categories";
-                            $select_categories = mysqli_query($connection,$query);
-                        
-                            while($row = mysqli_fetch_assoc($select_categories)){
-                            $cat_id = $row['cat_id'];
-                            $cat_title = $row['cat_title'];
+                        <tbody>    
+                        <!-- // FIND ALL CATEGORIES  -->
+                            <?php findAllCategories();   ?>   
 
-                            echo "<tr>";
-                            echo "<td>{$cat_id}</td>";
-                            echo "<td>{$cat_title}</td>";
-                            echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
-                            echo "<td><a href='categories.php?edit={$cat_id}'>Edit</a></td>";
-                            echo "<tr>";
-                              }
-                            ?>   
+                           
                         </tbody>
                     </table>
                   </div>               
