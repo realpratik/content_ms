@@ -1,4 +1,8 @@
 
+
+<!-- <?php 
+include "includes/db.php" 
+?> -->
 <!--navigation-->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -10,13 +14,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="admin-index.php">Create your Blog</a>
+            <a class="navbar-brand" href="index.php">Create and manage Blog</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <?php
                     // $connection = mysqli_connect("localhost","root","root","cms");
+                    global $connection;
                     $query = "SELECT * FROM categories";
                     $select_all_categories_query = mysqli_query($connection,$query);
 
@@ -30,8 +35,12 @@
                         <a href="about.php">Abouts Us</a>
                     </li> -->
                 <li>
-                    <a href="admin/admin_index.php">Admin</a>
+                    <a href="login.php">Login</a>
                 </li>
+                <li>
+                    <a href="register.php">Register</a>
+                </li>
+           
                
                 <!-- <l
                     <a href="#">Services</a>

@@ -32,7 +32,7 @@
 
                         switch($source){
                           case 'add_post';
-                            include "includes/add_post.php";
+                            include "includes/add_post.php"; 
                             //echo "NICE 34";
                             break;
 

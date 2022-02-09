@@ -7,13 +7,19 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Create and manage your content</title>
+        
+
+        <title>Blog- content management system</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
 
         <!-- Custom CSS -->
         <link href="css/blog-home.css" rel="stylesheet">
+        <link href="css/form.css" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
