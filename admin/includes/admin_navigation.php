@@ -1,3 +1,4 @@
+
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="././admin_index.php">CMS Admin</a>
+                <a class="navbar-brand" href="././admin_index.php">Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -16,7 +17,7 @@
 
                 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $email ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -29,14 +30,14 @@
                         </li> -->
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
+            <div class="collapse navbar-collapse navbar-ex1-collapse" >
+                <ul id="admin_bg" class="nav navbar-nav side-nav">
                     <li>
                         <a href="././admin_index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
@@ -69,12 +70,6 @@
                                 <a href="#">User</a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="active">
-                        <a href="#"><i class="fa fa-fw fa-file"></i> Profiles</a>
-                    </li>
-                    <li class="active">
-                        <a href="logout.php"><i class="fa fa-fw fa-file"></i> Logout</a>
                     </li>
                 </ul>
             </div>

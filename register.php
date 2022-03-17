@@ -1,7 +1,6 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navigation.php'; ?>
 
-
     <!-- Page Content -->
     <div class="container">
         
@@ -13,7 +12,7 @@
                 <main class="form-signin">
 
                     <form action="output.php" method="post">
-                    <center> <img class="mb-4" src="images/register_icon.gif" alt="" width="72" height="80"></center>
+                    <center> <img class="mb-4" id="logo" src="images/favicon.png" alt="" width="72" height="80" margin-top="10px"></center>
                         <h1 class="h3 mb-3 fw-normal">Please register <br><br> to start creating a blog</h1> <br>
 
                         <div class="form-floating">
@@ -42,7 +41,8 @@
                         <input class="w-100 btn btn-lg btn-primary" type="submit" value="Register">
                         
                     </form>
-                    <p><a href="login.php">Login</a> if already registered.</p> 
+                    <p><a class="login_link" href="login.php">Login</a></bold> if already registered.</p> 
+                    <p>By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS notifications from us and can opt out at any time.</p>
                     
                 </main>
 
