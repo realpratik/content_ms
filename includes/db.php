@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 // $db['db_host'] = 'localhost';
 // $db['db_user'] = 'root';
 // $db['db_pass'] = 'root';
@@ -27,6 +28,14 @@ define("DB_PASS","root");
 // // $db['db_user'] = 'u4gxfjp6klfxf';
 // //$DB_PASS = 'w38emok43gvv';
 // // $DB_NAME = 'dbgnnigahhwhgm';
+=======
+$db['db_host'] = '';
+$db['db_user'] = '';
+$db['db_pass'] = '';
+$db['db_name'] = '';
+
+
+>>>>>>> refs/remotes/origin/Trunk
 
 
 
