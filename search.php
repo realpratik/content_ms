@@ -7,8 +7,11 @@
 
     <!-- Page Content -->
     <div class="container">
-        
         <div class="row">
+          <h1 class="page-header">
+            Results
+            <!-- <small>Secondary Text</small> -->
+            </h1>
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
@@ -30,13 +33,7 @@
                           $post_date = $row['post_date'];
                           $post_image = $row['post_image'];
                           $post_content = $row['post_content'];                            
-                ?>       
-
-                          <h1 class="page-header">
-                              Page Heading
-                              <small>Secondary Text</small>
-                          </h1>
-
+                ?>                   
                           <!-- First Blog Post -->
                           <h2>
                               <a href="#"><?php echo $post_title; ?></a>
@@ -56,9 +53,6 @@
                       }  
                   }
               ?>
-
-              
-
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
@@ -66,7 +60,5 @@
 
         </div>
         <!-- /.row -->
-
         <hr>
-
 <?php include "includes/footer.php"; ?>

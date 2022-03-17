@@ -1,8 +1,8 @@
 <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12" id="footer">
-                    <p>Copyright &copy;  Website 2022</p>
+                <div class="col-lg-12" id="footerid">
+                    <p> © <?php echo date("Y");   ?>  @stackengineers.com</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

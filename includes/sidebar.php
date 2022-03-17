@@ -31,19 +31,20 @@
                     <div class="well">
 
                         <?php
-                        //  $connection = mysqli_connect("localhost","root","root","cms"); if db is not included
+                        
                             $query = "SELECT * FROM categories LIMIT 3";
                             $select_categories_sidebar = mysqli_query($connection,$query);
                         ?>
 
                         <h4>Blog Categories</h4>
+                        <hr>
                         <div class="row">
                             <div class="col-lg-12">
                                 <ul class="list-unstyled">
                                 <?php
                                     while($row = mysqli_fetch_array($select_categories_sidebar)){
                                     $cat_title = $row['cat_title'];
-                                    echo "<li><a href='#'>{$cat_title}<a></li>";
+                                    echo "<li class='cat_list'><a href='#'>{$cat_title}<a></li>";
                                     }
                                 ?>
                                 </ul>

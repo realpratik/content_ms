@@ -1,3 +1,4 @@
+<?php ob_start() ?>
 <?php
 //fetch session
 $email = $_session['mysession'];

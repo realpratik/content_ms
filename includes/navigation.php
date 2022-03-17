@@ -1,8 +1,5 @@
+<!-- <?php include "includes/db.php" ?> -->
 
-
-<!-- <?php 
-include "includes/db.php" 
-?> -->
 <!--navigation-->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -14,39 +11,35 @@ include "includes/db.php"
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Create and manage Blog</a>
+            <a class="navbar-brand" href="index.php">Share your learnings</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <?php
-                    // $connection = mysqli_connect("localhost","root","root","cms");
+                <?php             
                     global $connection;
-                    $query = "SELECT * FROM categories";
+                    $query = "SELECT * FROM categories LIMIT 6";
                     $select_all_categories_query = mysqli_query($connection,$query);
 
                     while($row = mysqli_fetch_array($select_all_categories_query)){
                     $cat_title = $row['cat_title'];
                         echo  "<li><a href='#'>{$cat_title}</a></li>";
                     }
-                ?>
-         
+                ?>  
                     <!-- <li>
                         <a href="about.php">Abouts Us</a>
                     </li> -->
-                <li>
+                <li class="login_menu">
                     <a href="login.php">Login</a>
                 </li>
                 <li>
                     <a href="register.php">Register</a>
                 </li>
-           
-               
+                 
                 <!-- <l
                     <a href="#">Services</a>
                 </li> -->
                 
-
             </ul>
         </div>
         <!-- /.navbar-collapse -->
